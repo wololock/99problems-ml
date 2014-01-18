@@ -1,7 +1,7 @@
 use "p01.sml";
 
 val xs = [1,2,3,4,5]
-val names = ["johh", "ann", "mark"]
+val names = ["johh", "titus", "ann", "mark"]
 
 val start = "------ TESTS STARTS HERE ---------"
 
