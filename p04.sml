@@ -5,11 +5,12 @@
     res0: Int = 6 *)
 
 fun length xs = 
-	let fun aux(xs,acc) = case xs of
-			[] => acc
-		| _::xs' => aux(xs',acc+1)
-	in
-		aux(xs,0)
-	end
+  let
+    fun aux(xs,acc) = case xs of
+      [] => acc
+      | _::xs' => aux(xs',acc+1)
+  in
+    aux(xs,0)
+  end
 		
 	

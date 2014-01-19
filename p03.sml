@@ -10,13 +10,14 @@ exception Negative
 exception IndexOutOfBounds
 
 fun nth k xs = 
-	let fun aux(k,xs,acc) = case (xs, k<0) of
-			(_, true) => raise Negative
-		| (x::xs', _) =>	if acc = k then SOME(x)
-											else aux(k,xs',acc+1)
-		| _ => raise IndexOutOfBounds
-	in
-		aux(k,xs,0)
-	end
+  let
+    fun aux(k,xs,acc) = case (xs, k<0) of
+        (_, true) => raise Negative
+      | (x::xs', _) =>  if acc = k then SOME(x)
+                        else aux(k,xs',acc+1)
+      | _ => raise IndexOutOfBounds
+  in
+    aux(k,xs,0)
+  end
 		
 	

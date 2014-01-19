@@ -7,13 +7,13 @@
 use "p01.sml";
 
 fun reverse xs =
-	let
-		fun aux(xs,reversed) = case xs of
-				[] => reversed
-			| x::xs' => aux(xs', x::reversed)			
-	in
-		aux(xs, [])
-	end
+  let
+    fun aux(xs,reversed) = case xs of
+        [] => reversed
+      | x::xs' => aux(xs', x::reversed)			
+  in
+    aux(xs, [])
+  end
 				
 		
 	

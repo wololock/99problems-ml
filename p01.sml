@@ -5,8 +5,8 @@
     res0: Int = 8 *)
 
 fun last_01 xs = case xs of
-		x::[] => SOME(x)
-	|	_::xs' => last_01 xs'
-	| [] => NONE	
-	
+    x::[] => SOME(x)
+  |	_::xs' => last_01 xs'
+  | [] => NONE	
+  
 val last = last_01
