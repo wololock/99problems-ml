@@ -8,4 +8,4 @@
  
 
 fun decode xs = foldl (fn(tuple,acc) => case tuple of
-        (n,x) => acc @ (List.tabulate(n, (fn(n) => x)))) [] xs        
+        (n,x) => acc @ (List.tabulate(n, (fn n => x)))) [] xs        
