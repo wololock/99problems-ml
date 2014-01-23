@@ -6,8 +6,6 @@
     scala> slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
     res0: List[Symbol] = List('d, 'e, 'f, 'g) *)
 
-use "../p01-10/p04.sml";
-
 exception IndexOutOfBounds    
 
 fun slice(i,k,xs) =
