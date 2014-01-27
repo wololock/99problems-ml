@@ -12,7 +12,10 @@ exception IllegalArgument
     
 fun randomSelect(n,xs) = 
   let
-    val seed = Random.rand(0,512)
+    val now = Time.now()
+    val l = Int.fromLarge(Time.toSeconds(now) mod Int.toLarge(valOf(Int.maxInt)))
+    val h = Int.fromLarge(Time.toMilliseconds(now) mod Int.toLarge(valOf(Int.maxInt)))
+    val seed = Random.rand (l,h)
     fun aux(xs,k) = 
       let
         val list_size = length(xs)
