@@ -16,18 +16,18 @@ fun randomSelect(n,xs) =
     val l = Int.fromLarge(Time.toSeconds(now) mod Int.toLarge(valOf(Int.maxInt)))
     val h = Int.fromLarge(Time.toMilliseconds(now) mod Int.toLarge(valOf(Int.maxInt)))
     val seed = Random.rand (l,h)
-    fun aux(xs,k) = 
+    fun aux(xs,acc,k) = 
       let
         val list_size = length(xs)
         val divider = if list_size = 0 then 1 else list_size
         val random_index = Random.randNat(seed) mod divider
       in case k of
-          0 => xs
+          0 => acc
         | n => case removeAt(random_index, xs) of
-            (ys,_) => aux(ys,n-1)
+            (ys,SOME x) => aux(ys,x::acc,n-1)
+          | (ys, _) => aux(ys,acc,n-1)
       end
   in
     if n < 0 then raise IllegalArgument
-    else aux(xs, length(xs) - n)
+    else aux(xs,[],n)
   end
-    
